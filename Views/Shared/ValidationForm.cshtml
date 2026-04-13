@@ -20,13 +20,16 @@
     </nav>
 
     <section>
-        <p style="text-align:center;"><strong>Votre formulaire a bien été pris en compte</strong></p>
+        <p><strong>Votre formulaire a bien été pris en compte</strong></p>
 
         <!-- Informations personnelles -->
         <table>
+            <thead>
             <tr>
-                <td colspan="2"><strong>Informations personnelles</strong></td>
+                <th colspan="2"><strong>Informations personnelles</strong></th>
             </tr>
+            </thead>
+            <tbody>
             <tr>
                 <td>Nom</td>
                 <td>@Model.Nom</td>
@@ -55,13 +58,17 @@
                 <td>Adresse mail</td>
                 <td>@Model.AdresseMail</td>
             </tr>
+            </tbody>
         </table>
 
         <!-- Informations formation suivie -->
         <table>
+            <thead>
             <tr>
-                <td colspan="2"><strong>Informations formation suivie</strong></td>
+                <th colspan="2"><strong>Informations formation suivie</strong></th>
             </tr>
+            </thead>
+            <tbody>
             <tr>
                 <td>Date début formation</td>
                 <td>@Model.DateDebut?.ToString("dd/MM/yyyy")</td>
@@ -70,13 +77,17 @@
                 <td>Formation suivie</td>
                 <td>@Model.Formation</td>
             </tr>
+            </tbody>
         </table>
 
         <!-- Avis sur la formation -->
         <table>
+            <thead>
             <tr>
-                <td colspan="2"><strong>Avis sur la formation</strong></td>
+                <th colspan="2"><strong>Avis sur la formation</strong></th>
             </tr>
+            </thead>
+            <tbody>
             <tr>
                 <td>Formation Cobol</td>
                 <td>@Model.AvisCobol</td>
@@ -85,6 +96,7 @@
                 <td>Formation C#</td>
                 <td>@Model.AvisCSharp</td>
             </tr>
+            </tbody>
         </table>
     </section>
 </body>

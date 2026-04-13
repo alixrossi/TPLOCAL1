@@ -5,10 +5,6 @@
 <head>
     <title>HN - Liste avis</title>
     <link rel="stylesheet" href="~/resources/Index.css" />
-    <style>
-        .avis-oui { color: green; }
-        .avis-non { color: red; }
-    </style>
 </head>
 <body>
     <header>
@@ -25,9 +21,12 @@
 
     <section>
         <table>
+            <thead>
             <tr>
-                <td colspan="3"><strong>Liste</strong></td>
+                <th colspan="3"><strong>Liste</strong></th>
             </tr>
+            </thead>
+            <tbody>
             <tr>
                 <td><strong>Nom</strong></td>
                 <td><strong>Prénom</strong></td>
@@ -43,6 +42,7 @@
                     </td>
                 </tr>
             }
+            </tbody>
         </table>
     </section>
 </body>

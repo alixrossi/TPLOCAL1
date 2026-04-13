@@ -1,11 +1,4 @@
-﻿.image {
-    width: 150px;
-    height: 150px;
-    display: inline-block;
-    vertical-align: middle;
-}
-
-h1 {
+﻿h1 {
     margin-right: 170px;
     margin-left: 170px;
     text-align: center;
@@ -30,6 +23,50 @@ a {
     color: chocolate;
 }
 
+section a:hover {
+    color: orange;
+}
+
+nav a:hover {
+    color: white;
+}
+
 section {
     margin-left: 170px;
+}
+
+th {
+    text-align: center;
+    padding: .3rem;
+}
+
+tbody {
+    display: block;
+    border: 1px solid black;
+}
+
+td {
+    border: 1px solid black;
+    padding: .3rem;
+}
+
+.image {
+    width: 150px;
+    height: 150px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.avis-oui {
+    color: white;
+    background-color: green;
+}
+
+.avis-non {
+    color: black;
+    background-color: red;
+}
+
+.field-validation-error {
+    color: red;
 }

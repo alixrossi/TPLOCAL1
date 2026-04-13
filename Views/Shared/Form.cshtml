@@ -23,9 +23,12 @@
             @Html.AntiForgeryToken()
             <!-- Informations personnelles -->
             <table>
+                <thead>
                 <tr>
-                    <td colspan="2"><strong>Informations personnelles</strong></td>
+                    <th colspan="2"><strong>Informations personnelles</strong></th>
                 </tr>
+                </thead>
+                <tbody>
                 <tr>
                     <td>Nom</td>
                     <td>
@@ -80,12 +83,16 @@
                         <span asp-validation-for="AdresseMail"></span>
                     </td>
                 </tr>
+                </tbody>
             </table>
             <!-- Informations formation suivie -->
             <table>
+                <thead>
                 <tr>
-                    <td colspan="2"><strong>Informations formation suivie</strong></td>
+                    <th colspan="2"><strong>Informations formation suivie</strong></th>
                 </tr>
+                </thead>
+                <tbody>
                 <tr>
                     <td>Date début formation</td>
                     <td>
@@ -105,12 +112,16 @@
                         <span asp-validation-for="Formation"></span>
                     </td>
                 </tr>
+                </tbody>
             </table>
             <!-- Avis sur la formation -->
             <table>
+                <thead>
                 <tr>
-                    <td colspan="2"><strong>Avis sur la formation</strong></td>
+                    <th colspan="2"><strong>Avis sur la formation</strong></th>
                 </tr>
+                </thead>
+                <tbody>
                 <tr>
                     <td>Formation Cobol</td>
                     <td>
@@ -123,6 +134,7 @@
                         <input asp-for="AvisCSharp" type="text" />
                     </td>
                 </tr>
+                </tbody>
             </table>
             <p>
                 <input type="submit" value="Valider" />
