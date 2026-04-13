@@ -1,0 +1,49 @@
+@model List<TPLOCAL1.Models.Opinion>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HN - Liste avis</title>
+    <link rel="stylesheet" href="~/resources/Index.css" />
+    <style>
+        .avis-oui { color: green; }
+        .avis-non { color: red; }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="~/resources/GroupeHN.png" class="image" alt="GroupeHN" />
+        <h1>Liste des avis</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="/Home/Index">Accueil</a></li>
+            <li><a href="/Home/Index/Form">Remplir le formulaire</a></li>
+        </ul>
+    </nav>
+
+    <section>
+        <table>
+            <tr>
+                <td colspan="3"><strong>Liste</strong></td>
+            </tr>
+            <tr>
+                <td><strong>Nom</strong></td>
+                <td><strong>Prénom</strong></td>
+                <td><strong>Avis donné</strong></td>
+            </tr>
+            @foreach (var opinion in Model)
+            {
+                <tr>
+                    <td>@opinion.LastName</td>
+                    <td>@opinion.FirstName</td>
+                    <td class="@(opinion.OpinionGiven == "O" ? "avis-oui" : "avis-non")">
+                        @(opinion.OpinionGiven == "O" ? "Oui" : "Non")
+                    </td>
+                </tr>
+            }
+        </table>
+    </section>
+</body>
+</html>

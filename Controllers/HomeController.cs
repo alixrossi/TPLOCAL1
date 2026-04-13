@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-
+using System.IO;
 using TPLOCAL1.Models;
 
 //Subject is find at the root of the project and the logo in the wwwroot/ressources folders of the solution
@@ -22,11 +22,11 @@ namespace TPLOCAL1.Controllers
                 switch (id)
                 {
                     case "OpinionList":
-                        //TODO : code reading of the xml files provide
-                        return View(id);
+                        string xmlPath = Path.Combine(Directory.GetCurrentDirectory(), "XlmFile", "DataAvis.xml");
+                        var opinions = new OpinionList().GetAvis(xmlPath);
+                        return View(id, opinions);
                     case "Form":
-                        //TODO : call the Form view with data model empty
-                        return View(id);
+                        return View(id, new FormModel());
                     default:
                         //retourn to the Index view (see routing in Program.cs)
                         return View();
@@ -37,13 +37,21 @@ namespace TPLOCAL1.Controllers
 
         //methode to send datas from form to validation page
         [HttpPost]
-        public ActionResult ValidationFormulaire(/*model*/)
+        [ValidateAntiForgeryToken]
+        public ActionResult ValidationFormulaire(FormModel model)
         {
-            //TODO : test if model's fields are set
-            //if not, display an error message and stay on the form page
-            //else, call ValidationForm with the datas set by the user
-            return null;
+            // Date check: must be before 01/01/2021
+            if (model.DateDebut.HasValue && model.DateDebut.Value >= new DateTime(2021, 1, 1))
+            {
+                ModelState.AddModelError("DateDebut", "La date de début doit être antérieure au 01/01/2021.");
+            }
 
+            if (!ModelState.IsValid)
+            {
+                return View("Form", model);
+            }
+
+            return View("ValidationForm", model);
         }
     }
 }
