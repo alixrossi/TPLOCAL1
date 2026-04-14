@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using System.IO;
 using TPLOCAL1.Models;
 
 //Subject is find at the root of the project and the logo in the wwwroot/ressources folders of the solution
@@ -38,7 +37,7 @@ namespace TPLOCAL1.Controllers
         //methode to send datas from form to validation page
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult ValidationFormulaire(FormModel model)
+        public ActionResult ValidationForm(FormModel model)
         {
             // Date check: must be before 01/01/2021
             if (model.DateDebut.HasValue && model.DateDebut.Value >= new DateTime(2021, 1, 1))

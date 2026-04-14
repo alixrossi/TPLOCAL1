@@ -1,4 +1,3 @@
-using System;
 using System.ComponentModel.DataAnnotations;
 
 namespace TPLOCAL1.Models
@@ -29,9 +28,9 @@ namespace TPLOCAL1.Models
         public DateTime? DateDebut { get; set; }
         [Required]
         public string Formation { get; set; }
-        
+
         // Avis formation
-        public string AvisCobol { get; set; }
-        public string AvisCSharp { get; set; }
+        public string? AvisCobol { get; set; }
+        public string? AvisCSharp { get; set; }
     }
 }
