@@ -35,8 +35,8 @@ section {
     margin-left: 170px;
 }
 
-table {
-    display: inline-block;
+thead {
+    display: block;
 }
 
 th {
@@ -45,7 +45,7 @@ th {
 }
 
 tbody {
-    display: inline-block;
+    display: block;
     border: 1px solid black;
 }
 
