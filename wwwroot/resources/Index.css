@@ -35,13 +35,17 @@ section {
     margin-left: 170px;
 }
 
+table {
+    display: inline-block;
+}
+
 th {
     text-align: center;
     padding: .3rem;
 }
 
 tbody {
-    display: block;
+    display: inline-block;
     border: 1px solid black;
 }
 

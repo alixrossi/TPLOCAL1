@@ -6,31 +6,31 @@ namespace TPLOCAL1.Models
     {
         // Infos personnelles
         [Required]
-        public string Nom { get; set; }
+        public string LastName { get; set; }
         [Required]
-        public string Prenom { get; set; }
+        public string FirstName { get; set; }
         [Required]
-        public string Sexe { get; set; }
+        public string Sex { get; set; }
         [Required]
-        public string Adresse { get; set; }
+        public string Address { get; set; }
         [Required]
         [RegularExpression(@"^\d{5}$", ErrorMessage = "Le code postal doit contenir exactement 5 chiffres.")]
-        public string CodePostal { get; set; }
+        public string PostCode { get; set; }
         [Required]
-        public string Ville { get; set; }
+        public string City { get; set; }
         [Required]
         [EmailAddress(ErrorMessage = "L'adresse mail n'est pas valide.")]
-        public string AdresseMail { get; set; }
+        public string Email { get; set; }
 
         // Info formation
         [Required]
         [DataType(DataType.Date)]
-        public DateTime? DateDebut { get; set; }
+        public DateTime? StartDate { get; set; }
         [Required]
         public string Formation { get; set; }
 
         // Avis formation
-        public string? AvisCobol { get; set; }
-        public string? AvisCSharp { get; set; }
+        public string? OpinionCobol { get; set; }
+        public string? OpinionCSharp { get; set; }
     }
 }

@@ -40,9 +40,9 @@ namespace TPLOCAL1.Controllers
         public ActionResult ValidationForm(FormModel model)
         {
             // Date check: must be before 01/01/2021
-            if (model.DateDebut.HasValue && model.DateDebut.Value >= new DateTime(2021, 1, 1))
+            if (model.StartDate.HasValue && model.StartDate.Value >= new DateTime(2021, 1, 1))
             {
-                ModelState.AddModelError("DateDebut", "La date de début doit être antérieure au 01/01/2021.");
+                ModelState.AddModelError("StartDate", "La date de début doit être antérieure au 01/01/2021.");
             }
 
             if (!ModelState.IsValid)

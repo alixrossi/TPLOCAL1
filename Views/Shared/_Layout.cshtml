@@ -1,0 +1,38 @@
+@{
+    var page = ViewData["Page"] as string;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="~/resources/Index.css" />
+</head>
+<body>
+    <header>
+        <img src="~/resources/GroupeHN.png" class="image" alt="GroupeHN" />
+        <h1>@ViewData["Heading"]</h1>
+    </header>
+
+    <nav>
+        <ul>
+            @if (page != "Index")
+            {
+                <li><a asp-controller="Home" asp-action="Index">Accueil</a></li>
+            }
+            @if (page != "Form")
+            {
+                <li><a asp-controller="Home" asp-action="Index" asp-route-id="Form">Remplir le formulaire</a></li>
+            }
+            @if (page != "OpinionList")
+            {
+                <li><a asp-controller="Home" asp-action="Index" asp-route-id="OpinionList">Liste avis</a></li>
+            }
+        </ul>
+    </nav>
+
+    <section>
+        @RenderBody()
+    </section>
+</body>
+</html>
