@@ -5,7 +5,6 @@
     ViewData["Page"] = "Form";
 }
 
-@Html.ValidationSummary(false, "")
 <form asp-controller="Home" asp-action="ValidationForm" method="post">
     @Html.AntiForgeryToken()
     <!-- Informations personnelles -->
