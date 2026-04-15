@@ -21,7 +21,7 @@ namespace TPLOCAL1.Controllers
                 switch (id)
                 {
                     case "OpinionList":
-                        string xmlPath = Path.Combine(Directory.GetCurrentDirectory(), "XlmFile", "DataAvis.xml");
+                        string xmlPath = Path.Combine(Directory.GetCurrentDirectory(), "XmlFile", "DataAvis.xml");
                         var opinions = new OpinionList().GetAvis(xmlPath);
                         return View(id, opinions);
                     case "Form":
